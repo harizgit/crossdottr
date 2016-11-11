@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <title>Electronic Signatures and Fast, Secure, Legally Binding Online Approvals | CrossDottr</title>
+  <meta name="description" content="Admin, Dashboard, Bootstrap, Bootstrap 4, Angular, AngularJS" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <link rel="icon" href="bootstrap/assets/images/favicon.ico">
+  <link rel="apple-touch-icon" href="bootstrap/assets/images/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="bootstrap/assets/images/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="bootstrap/assets/images/apple-touch-icon-114x114.png">
+
+  <!-- style -->
+  <!-- <link rel="stylesheet" href="bootstrap/assets/animate.css/animate.min.css" type="text/css" /> -->
+  <link rel="stylesheet" href="bootstrap/assets/glyphicons/glyphicons.css" type="text/css" />
+  <link rel="stylesheet" href="bootstrap/assets/font-awesome/css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="bootstrap/assets/material-design-icons/material-design-icons.css" type="text/css" />
+
+  <link rel="stylesheet" href="bootstrap/assets/styles/bootstrap.min.css" type="text/css" />
+  <!-- build:css assets/styles/app.min.css -->
+  <link rel="stylesheet" href="bootstrap/assets/styles/app.min.css" type="text/css" />
+  <!-- endbuild -->
+  <link rel="stylesheet" href="bootstrap/assets/styles/font.css" type="text/css" />
+
+  <!-- Signature type fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Allura|Kaushan+Script|Dancing+Script|Marck+Script" rel="stylesheet">
+  <link rel="stylesheet" href="bootstrap/assets/styles/dropzone.min.css" type="text/css" />
+
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="app.css">
+  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+
+  <link rel="stylesheet" href="bootstrap/css/summernote.css" type="text/css" />
+  <link rel="stylesheet" href="bootstrap/css/breadcrumbs.css" type="text/css" />
+
+
+</head>
+<body>
+
+
+
+
+<div class="app" id="app">
+
+<!-- ############ LAYOUT START-->
+
+  <!-- aside -->
+  <div id="aside" class="app-aside modal fade nav-dropdown">
+    <!-- fluid app aside -->
+    <div class="left navside dk" layout="column">
+      <div class="navbar cross-nav">
+        <!-- brand -->
+        <a href="index.html" class="navbar-brand">
+          <img src="bootstrap/assets/images/logo.png" alt="crossdottr logo">
+        </a>
+        <!-- / brand -->
+      </div>
+      <div flex>
+        <button class="btn navbar-btn success" onclick="window.location.href='#!/create_contract'"><i class="fa fa-file-o" aria-hidden="true"></i>Create Contract
+        </button>
+        <nav class="scroll nav-light">
+
+              <ul class="nav" ui-nav>
+                <li>
+                  <a href="#!/home">
+                    <span class="nav-icon">
+                      <svg class="nc-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 48 48"><g transform="translate(0, 0)"> <polyline data-cap="butt" fill="none" stroke="#464e54" stroke-width="3" stroke-miterlimit="10" points="8,18.5 8,44 20,44 20,34 28,34 28,44 40,44 40,18.5 " stroke-linejoin="round" stroke-linecap="round"></polyline> <polyline data-cap="butt" data-color="color-2" fill="none" stroke="#464e54" stroke-width="3" stroke-miterlimit="10" points="2,24 24,4 46,24 " stroke-linejoin="round" stroke-linecap="round"></polyline>  </g></svg>
+                    </span>
+                    <span class="nav-text">Home</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#!/contract-list">
+                    <span class="nav-icon">
+                      <i class="fa fa-folder-o" aria-hidden="true"></i>
+                    </span>
+                    <span class="nav-text">Documents</span>
+                  </a>
+                  <ul>
+                    <li>
+                      <a href="#!/contract-list" >
+                        <span class="nav-text"><i class="status-icon danger"></i>Inbox <span class="label danger pull-right">9</span></span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#!/contract-list" >
+                        <span class="nav-text"><i class="status-icon success"></i>Waiting for Others</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#!/contract-list" >
+                        <span class="nav-text"><i class="status-icon accent"></i>Archived</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#!/contract-list" >
+                        <span class="nav-text"><i class="status-icon warn"></i>Drafts</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#" >
+                    <span class="nav-icon">
+                      <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                    </span>
+                    <span class="nav-text">Templates</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a href"#" >
+                    <span class="nav-icon">
+                      <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                    </span>
+                    <span class="nav-text">Reports</span>
+                  </a>
+                </li>
+
+              </ul>
+          </nav>
+      </div>
+      <div flex-no-shrink class="b-t">
+        <div class="nav-fold">
+          <a href="">
+            <span class="nav-text"><b>Help</b></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- / -->
+
+  <!-- content -->
+  <div id="content" class="app-content box-shadow-z0" role="main">
+    <div class="app-header">
+        <div class="navbar">
+            <!-- Open side - Naviation on mobile -->
+            <a data-toggle="modal" data-target="#aside" class="navbar-item pull-left hidden-lg-up">
+              <i class="material-icons">&#xe5d2;</i>
+            </a>
+            <!-- / -->
+
+            <!-- Page title - Bind to $state's title -->
+            <div class="navbar-item pull-left h5" ng-bind="$state.current.data.title" id="pageTitle"></div>
+
+            <!-- navbar right -->
+            <ul class="nav navbar-nav pull-right">
+              <li class="nav-item">
+                <a href="#" class="btn btn-sm btn-upgrade">Upgrade</a>
+              </li>
+              <li class="nav-item dropdown pos-stc-xs">
+                <a class="nav-link" href data-toggle="dropdown">
+                  <i class="material-icons">&#xe7f5;</i>
+                  <span class="label label-sm up danger">3</span>
+                </a>
+                <div ui-include="'views/blocks/dropdown.notification.html'"></div>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link clear" href data-toggle="dropdown">
+                  <span class="avatar w-32">
+                    <img src="bootstrap/assets/images/a0.jpg" alt="...">
+                    <i class="on b-white bottom"></i>
+                  </span>
+                </a>
+                <div ui-include="'views/blocks/dropdown.user.html'"></div>
+              </li>
+              <li class="nav-item hidden-md-up">
+                <a class="nav-link" data-toggle="collapse" data-target="#collapse">
+                  <i class="material-icons">&#xe5d4;</i>
+                </a>
+              </li>
+            </ul>
+            <!-- / navbar right -->
+
+            <!-- navbar collapse -->
+            <div class="collapse navbar-toggleable-sm" id="collapse">
+              <!-- link and dropdown -->
+              <form class="navbar-form form-inline pull-none-sm navbar-item v-m" role="search">
+                <div class="form-group l-h m-a-0">
+                  <div class="input-group top-search">
+                    <span class="input-group-btn">
+                      <button type="submit" class="btn white no-shadow"><i class="fa fa-search"></i></button>
+                    </span>
+                    <input type="text" class="form-control no-shadow" placeholder="Search documents...">
+                  </div>
+                </div>
+              </form>
+            </div>
+            <!-- / navbar collapse -->
+        </div>
+    </div>
+
+    <!-- Right panel content -->
+<div ui-view class="app-body" id="view">
+    <div ng-view></div>
+
+  </div>
+  <!-- / -->
+
+<!-- ############ LAYOUT END-->
+
+  </div>
+
+<!-- Modals -->
+<div id="create-sign" class="modal black-overlay fade" data-backdrop="false">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content box-shadow-lg">
+      <div class="modal-header">
+        <h5 class="modal-title m-b-sm">Create your electronic signature</h5>
+        <p>
+          Just like a traditional signature, this mark is used by CrossDottr to represent your intent to sign documents </br>
+          You appear to be located in <strong>Denmark</strong> where electronic signatures are legally binding. <a class="text-primary _500" href="#">Read more</a>
+        </p>
+        <!-- <span><strong>Draw your signature below or</strong></span>
+        <div class="btn-group m-l-sm dropdown">
+          <button class="btn btn-sm white dropdown-toggle" data-toggle="dropdown">choose a different method</button>
+          <div class="dropdown-menu dropdown-menu-scale pull-right">
+            <a class="dropdown-item" href>Type it</a>
+            <a class="dropdown-item" href>Upload a file</a>
+          </div>
+        </div> -->
+
+        <!-- nav tabs -->
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a class="nav-link active" href="" data-toggle="tab" data-target="#type" aria-expanded="false">Type Signature</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="" data-toggle="tab" data-target="#draw" aria-expanded="true">Draw Signature</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="" data-toggle="tab" data-target="#upload" aria-expanded="false">Upload File</a>
+          </li>
+        </ul><!-- end nav tabs -->
+
+      </div>
+
+      <!-- <div class="text-center">
+        <div class="btn-group">
+            <button type="button" class="btn btn-sm btn-info">Draw</button>
+            <button type="button" class="btn btn-sm white">Type It</button>
+            <button type="button" class="btn btn-sm white">Upload</button>
+        </div>
+      </div> -->
+      <div class="modal-body">
+        <div class="tab-content">
+
+          <!-- Type Signature -->
+          <div role="tabpanel" class="tab-pane fade in active" id="type">
+              <div class="row">
+                <div class="form-group col-md-4 col-md-offset-4 m-b-0">
+                  <input type="text" class="form-control has-value" value="Barrington Russell" placeholder="Your name">
+                </div>
+              </div>
+              <div class="m-t-md row">
+                <div class="col-md-6">
+                  <div class="signature-type active" style="font-family: 'Allura', cursive;">
+                    <!-- <div class="radio">
+                      <label class="ui-check ui-check-md">
+                        <input type="radio" name="a" class="has-value" checked="checked">
+                        <i class="dark-white"></i>
+                        Barrington Russel
+                      </label>
+                    </div> -->
+                    Barrington Russel
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="signature-type" style="font-family: 'Kaushan Script', cursive;">
+                    <!-- <div class="radio">
+                      <label class="ui-check ui-check-md">
+                        <input type="radio" name="a" class="has-value">
+                        <i class="dark-white"></i>
+                        Barrington Russel
+                      </label>
+                    </div> -->
+                    Barrington Russel
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="signature-type" style="font-family: 'Marck Script', cursive;">
+                    <!-- <div class="radio">
+                      <label class="ui-check ui-check-md">
+                        <input type="radio" name="a" class="has-value">
+                        <i class="dark-white"></i>
+                        Barrington Russel
+                      </label>
+                    </div> -->
+                    Barrington Russel
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="signature-type" style="font-family: 'Dancing Script', cursive;">
+                    <!-- <div class="radio">
+                      <label class="ui-check ui-check-md">
+                        <input type="radio" name="a" class="has-value">
+                        <i class="dark-white"></i>
+                        Barrington Russel
+                      </label>
+                    </div> -->
+                    Barrington Russel
+                  </div>
+                </div>
+              </div>
+          </div><!-- End Type Signature -->
+
+          <!-- Draw Signature -->
+          <div role="tabpanel" class="tab-pane fade in" id="draw">
+            <div class="capture-signature">
+              <!-- <div class="radio">
+                <label class="ui-check ui-check-md">
+                  <input type="radio" name="a" class="has-value">
+                  <i class="dark-white"></i>
+                  Choose this signature
+                </label>
+              </div> -->
+              <div class="capture-signature-body">
+              </div>
+              <div class="m-t-sm">
+                <span class="text-muted">Draw your signature above the line</span>
+                <a class="text-danger pull-right"><i class="material-icons">&#xE5CD;</i> Clear Signature</a>
+              </div>
+            </div>
+          </div><!-- End Draw Signature -->
+
+          <!-- Upload Signature -->
+          <div role="tabpanel" class="tab-pane fade in" id="upload">
+            <!-- <div class="radio">
+              <label class="ui-check ui-check-md">
+                <input type="radio" name="a" class="has-value">
+                <i class="dark-white"></i>
+                Choose this signature
+              </label>
+            </div> -->
+            <form action="api/dropzone" class="dropzone">
+              <div class="dz-message" ui-jp="dropzone" ui-options="{ url: 'api/dropzone' }">
+                  <h4 class="m-t-lg m-b">Drop files here or click to upload.</h4>
+                  <span class="text-muted block m-b-lg">Maximum file size: <strong>40 MB</strong>. Acceptable file formats: <strong>png</strong>, <strong>jpg</strong>, <strong>jpeg</strong>, <strong>bmp</strong>, <strong>gif</strong></span>
+              </div>
+            </form>
+          </div><!-- End Upload Signature -->
+
+        </div>
+
+
+      </div>
+      <div class="modal-footer">
+        <label class="ui-check m-a-0 m-t-sm pull-left">
+          <input checked="true" type="checkbox"><i></i> I agree to have this signature legally represent me.
+        </label>
+        <button type="button" class="btn secondary p-x-md" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn success p-x-md" data-dismiss="modal">Agree & Choose</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div>
+</div>
+<!-- / .modal -->
+
+
+
+<script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="app.js"></script>
+  <script src="home/home.js"></script>
+  <script src="contract_list/contract_list.js"></script>
+  <script src="create_contract/create_contract.js"></script>
+  <script src="smart-fields/smart-fields.js"></script>
+  <script src="review/review.js"></script>
+  <script src="view2/view2.js"></script>
+  <script src="components/version/version.js"></script>
+  <script src="components/version/version-directive.js"></script>
+  <script src="components/version/interpolate-filter.js"></script>
+<!-- build:js scripts/app.html.js -->
+<!-- jQuery -->
+  <script src="bootstrap/libs/jquery/jquery/dist/jquery.js"></script>
+<!-- Bootstrap -->
+  <script src="bootstrap/libs/jquery/tether/dist/js/tether.min.js"></script>
+  <script src="bootstrap/libs/jquery/bootstrap/dist/js/bootstrap.js"></script>
+<!-- core -->
+  <script src="bootstrap/libs/jquery/underscore/underscore-min.js"></script>
+  <script src="bootstrap/libs/jquery/jQuery-Storage-API/jquery.storageapi.min.js"></script>
+  <script src="bootstrap/libs/jquery/PACE/pace.min.js"></script>
+
+  <script src="bootstrap/scripts/config.lazyload.js"></script>
+
+  <script src="bootstrap/scripts/palette.js"></script>
+  <script src="bootstrap/scripts/ui-load.js"></script>
+  <script src="bootstrap/scripts/ui-jp.js"></script>
+  <script src="bootstrap/scripts/ui-include.js"></script>
+  <script src="bootstrap/scripts/ui-device.js"></script>
+  <script src="bootstrap/scripts/ui-form.js"></script>
+  <script src="bootstrap/scripts/ui-nav.js"></script>
+  <script src="bootstrap/scripts/ui-screenfull.js"></script>
+  <script src="bootstrap/scripts/ui-scroll-to.js"></script>
+  <script src="bootstrap/scripts/ui-toggle-class.js"></script>
+
+
+  <script src="bootstrap/scripts/app.js"></script>
+
+  <!-- Dropzone -->
+  <script src="bootstrap/libs/js/dropzone/dropzone.min.js"></script>
+
+  <!-- ajax -->
+  <script src="bootstrap/libs/jquery/jquery-pjax/jquery.pjax.js"></script>
+  <script src="bootstrap/scripts/ajax.js"></script>
+<!-- endbuild -->
+</body>
+</html>

@@ -1,0 +1,115 @@
+ <div class="padding container">
+
+    	<div class="row">
+        <div class="col-sm-12">
+          <nav>
+            <ol class="cd-multi-steps text-top">
+        			<li class="current"><a href="#0">Choose Recepients</a></li>
+        			<li><span>Add Smart Fields</span></li>
+        			<li><span>Review & Send</span></li>
+        		</ol>
+        	</nav>
+        </div>
+      </div>
+
+      <div class="row">
+
+    	    <div class="col-md-4">
+
+            <div class="box">
+              <div class="box-header">
+                <h3>Upload Document</h3>
+              </div>
+              <div class="box-body white mb20">
+                <form role="form">
+                  <button type="submit" class="btn primary"><i class="material-icons md-20"></i> Upload File</button>
+                  <div class="text-muted mt10">Upload the documents you want to get signed</div>
+                  <!-- <div>mcNuggets_purchaseOrder.pdf</div> -->
+                </form>
+              </div>
+
+              <div class="box-body white">
+                <div><i class="text-md fa fa-file-pdf-o mr10"></i> <strong>mcNuggets_purchaseOrder.pdf</strong><a href class="nav-link pull-right">
+                  <i class="material-icons md-20"></i>
+                </a></div>
+
+              </div>
+            </div>
+
+            <div class="box">
+              <div class="box-header">
+                <h3>Who Needs to Sign?</h3>
+              </div>
+
+              <div class="box-body white mb20">
+                <form role="form">
+                  <div class="form-group">
+                    <label for="name1">Name & Email</label>
+                    <input type="text" class="form-control" id="name1" value="daniel richardson" placeholder="Name">
+                  </div>
+                  <div class="form-group">
+                    <input type="email" class="form-control" id="email1" value="daniel@gmail.com" placeholder="Enter email">
+                  </div>
+                </form>
+              </div>
+
+              <div class="box-body white mb20">
+                <form role="form">
+                  <div class="form-group">
+                    <label for="name2">Name & Email</label>
+                    <input type="text" class="form-control" id="name2" placeholder="Name">
+                  </div>
+                  <div class="form-group">
+                    <input type="email" class="form-control" id="email2" placeholder="Enter email">
+                  </div>
+                  <a class="text-sm" href><i class="fa fa-trash-o"></i> <strong>Remove Signer</strong></a>
+                </form>
+              </div>
+
+              <!-- Add signee button -->
+              <button type="submit" class="btn btn-dashed"><i class="material-icons md-20"></i> Add Signer</button>
+
+
+            </div>
+
+    	    </div>
+
+          <!-- Cover Email -->
+          <div class="col-md-8">
+
+            <div class="box m-b-md">
+
+                <div class="box-header">
+                  <h3>Compose Cover Email</h3>
+                </div>
+                <div class="box-body white">
+                  <form role="form">
+                    <div class="form-group">
+                      <input type="text" class="form-control" id="subject" placeholder="Subject (e.g Contract for Review)">
+                      <div class="text-muted mb20 mt4">This message will be sent to everyone invited to sign the document</div>
+                    </div>
+
+                  </form>
+                  <div class="summernote-editor" ui-jp="summernote" ui-options="{height: 250,
+                          toolbar: [
+                            ['style', ['bold', 'italic', 'underline', 'clear']],
+                            ['color', ['color']],
+                            ['para', ['ul', 'ol', 'paragraph']],
+                            ['height', ['height']]
+                          ]}">
+                  </div>
+                </div>
+            </div>
+
+  			  </div><!-- End Cover Email -->
+
+  	  </div>
+
+      <div class="row">
+        <div class="page-action col-md-12">
+          <a href="#!/smart-fields" class="btn success">Add Fields <i class="material-icons md-24"></i></a>
+          <a href="#!/home" class="btn secondary">Cancel</a>
+        </div>
+      </div>
+
+  	</div>

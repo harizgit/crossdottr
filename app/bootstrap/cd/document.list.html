@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Electronic Signatures and Fast, Secure, Legally Binding Online Approvals | CrossDottr</title>
+  <meta name="description" content="Admin, Dashboard, Bootstrap, Bootstrap 4, Angular, AngularJS" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <link rel="icon" href="../assets/images/favicon.ico">
+	<link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="../assets/images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="../assets/images/apple-touch-icon-114x114.png">
+
+  <!-- style -->
+  <link rel="stylesheet" href="../assets/animate.css/animate.min.css" type="text/css" />
+  <link rel="stylesheet" href="../assets/glyphicons/glyphicons.css" type="text/css" />
+  <link rel="stylesheet" href="../assets/font-awesome/css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="../assets/material-design-icons/material-design-icons.css" type="text/css" />
+
+  <link rel="stylesheet" href="../assets/bootstrap/dist/css/bootstrap.min.css" type="text/css" />
+  <!-- build:css ../assets/styles/app.min.css -->
+  <link rel="stylesheet" href="../assets/styles/app.min.css" type="text/css" />
+  <!-- endbuild -->
+  <link rel="stylesheet" href="../assets/styles/font.css" type="text/css" />
+</head>
+<body>
+  <div class="app" id="app">
+
+<!-- ############ LAYOUT START-->
+
+  <!-- aside -->
+  <div id="aside" class="app-aside modal fade nav-dropdown">
+  	<!-- fluid app aside -->
+    <div class="left navside dk" layout="column">
+  	  <div class="navbar cross-nav">
+        <!-- brand -->
+        <a class="navbar-brand">
+        	<img src="../assets/images/logo.png" alt=".">
+        	<span class="hidden-folded inline"><span style="font-weight:500;">Cross</span>Dottr</span>
+        </a>
+        <!-- / brand -->
+      </div>
+      <div flex>
+        <button class="btn navbar-btn primary"><i class="fa fa-file-o" aria-hidden="true"></i> Get Signatures</button>
+          <nav class="scroll nav-light">
+
+              <ul class="nav" ui-nav>
+
+                <li>
+                  <!-- <a>
+                    <span class="nav-icon">
+                      <i class="fa fa-tachometer" aria-hidden="true"></i>
+                    </span>
+                    <span class="nav-text">Dashboard</span>
+                  </a> -->
+                  <a>
+                    <span class="nav-icon">
+                      <i class="fa fa-folder-o" aria-hidden="true"></i>
+                    </span>
+                    <span class="nav-text">Documents</span>
+                  </a>
+                  <ul>
+                    <li>
+                      <a href="#" >
+                        <span class="nav-text"><i class="status-icon status-ofs"></i>Out for Signing <span class="label danger pull-right">9+</span></span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" >
+                        <span class="nav-text"><i class="status-icon status-ams"></i>Awaiting my Signature</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" >
+                        <span class="nav-text"><i class="status-icon status-returned"></i>Returned</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" >
+                        <span class="nav-text"><i class="status-icon status-draft"></i>Draft</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="dashboard.html" >
+                    <span class="nav-icon">
+                      <i class="fa fa-star-o" aria-hidden="true"></i>
+                    </span>
+                    <span class="nav-text">Templates</span>
+                  </a>
+                </li>
+
+              </ul>
+          </nav>
+      </div>
+      <div flex-no-shrink class="b-t">
+        <div class="nav-fold">
+        	<a href="profile.html">
+        	    <span class="pull-left">
+        	      <img src="../assets/images/a0.jpg" alt="..." class="w-40 img-circle">
+        	    </span>
+        	    <span class="clear hidden-folded p-x">
+        	      <span class="block _500">Jean Reyes</span>
+        	      <small class="block text-muted"><i class="fa fa-circle text-success m-r-sm"></i>online</small>
+        	    </span>
+        	</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- / -->
+
+  <!-- content -->
+  <div id="content" class="app-content box-shadow-z0" role="main">
+    <div class="app-header white">
+        <div class="navbar">
+            <!-- Open side - Naviation on mobile -->
+            <a data-toggle="modal" data-target="#aside" class="navbar-item pull-left hidden-lg-up">
+              <i class="material-icons">&#xe5d2;</i>
+            </a>
+            <!-- / -->
+
+            <!-- Page title - Bind to $state's title -->
+            <div class="navbar-item pull-left h5" ng-bind="$state.current.data.title" id="pageTitle"></div>
+
+            <!-- navbar right -->
+            <ul class="nav navbar-nav pull-right">
+              <li class="nav-item">
+                <a href="#" class="btn btn-sm btn-upgrade">Upgrade</a>
+              </li>
+              <!-- <li class="nav-item dropdown pos-stc-xs">
+                <a class="nav-link" href data-toggle="dropdown">
+                  <i class="material-icons">&#xe7f5;</i>
+                  <span class="label label-sm up danger">3</span>
+                </a>
+                <div ui-include="'../views/blocks/dropdown.notification.html'"></div>
+              </li> -->
+              <li class="nav-item dropdown">
+                <a class="nav-link clear" href data-toggle="dropdown">
+                  <span class="avatar w-32">
+                    <img src="../assets/images/a0.jpg" alt="...">
+                    <i class="on b-white bottom"></i>
+                  </span>
+                </a>
+                <div ui-include="'../views/blocks/dropdown.user.html'"></div>
+              </li>
+              <li class="nav-item hidden-md-up">
+                <a class="nav-link" data-toggle="collapse" data-target="#collapse">
+                  <i class="material-icons">&#xe5d4;</i>
+                </a>
+              </li>
+            </ul>
+            <!-- / navbar right -->
+
+            <!-- navbar collapse -->
+            <div class="collapse navbar-toggleable-sm" id="collapse">
+              <div ui-include="'../views/blocks/navbar.form.right.html'"></div>
+              <!-- link and dropdown -->
+              <form class="navbar-form form-inline pull-none-sm navbar-item v-m" role="search">
+                <div class="form-group l-h m-a-0">
+                  <div class="input-group top-search">
+                    <span class="input-group-btn">
+                      <button type="submit" class="btn white no-shadow"><i class="fa fa-search"></i></button>
+                    </span>
+                    <input type="text" class="form-control no-shadow" placeholder="Search documents...">
+                  </div>
+                </div>
+              </form>
+            </div>
+            <!-- / navbar collapse -->
+        </div>
+    </div>
+
+    <!-- Right panel content -->
+    <div ui-view class="app-body" id="view">
+
+<div class="padding">
+
+  <!-- Action Panel -->
+	<!-- <div class="row action-panel">
+    <div class="col-xs-6 col-sm-3">
+        <div class="box aws">
+          <div class="clear">
+            <h4 class="m-a-0 text-lg _500"><a href>9 <span class="text-md _400">Awaiting my Signature</span></a></h4>
+            <small class="text-muted">&nbsp;</small>
+          </div>
+        </div>
+    </div>
+		<div class="col-xs-6 col-sm-3">
+	        <div class="box ofs">
+	          <div class="clear">
+	            <h4 class="m-a-0 text-lg _500"><a href>18 <span class="text-md _400">Out for Signing</span></a></h4>
+	            <small class="text-muted">Average time to sign: <strong>3hrs</strong></small>
+	          </div>
+	        </div>
+	    </div>
+	    <div class="col-xs-6 col-sm-3">
+	        <div class="box ret">
+	          <div class="clear">
+	            <h4 class="m-a-0 text-lg _500"><a href>600 <span class="text-md _400">Returned</span></a></h4>
+	            <small class="text-muted">This week</small>
+	          </div>
+	        </div>
+	    </div>
+      <div class="col-xs-6 col-sm-3">
+  	        <div class="box dra">
+  	          <div class="clear">
+  	            <h4 class="m-a-0 text-lg _500"><a href>6 <span class="text-md _400">Draft</span></a></h4>
+  	            <small class="text-muted">&nbsp;</small>
+  	          </div>
+  	        </div>
+  	    </div>
+	</div> -->
+  <!-- End Action Panel -->
+
+  <div class="row">
+	    <div class="col-sm-12 col-md-8">
+        <div class="box">
+          <div class="box-header">
+            <h2>Documents</h2>
+          </div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th style="width:50px;">
+                  <label class="ui-check m-a-0">
+                    <input type="checkbox"><i></i>
+                  </label>
+                </th>
+                <th>Title</th>
+                <th>Last Modified</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="width:50px;">
+                  <label class="ui-check m-a-0">
+                    <input type="checkbox"><i></i>
+                  </label>
+                </td>
+                <td>
+                  <a class="table-hyperlink" href="#"><strong>Document v1.0</strong></a>
+                  <span class="status status-ofs">Out for Signing</span>
+                </td>
+                <td>Today, 05:23 PM</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td style="width:50px;">
+                  <label class="ui-check m-a-0">
+                    <input type="checkbox"><i></i>
+                  </label>
+                </td>
+                <td>
+                  <a class="table-hyperlink" href="#"><strong>Rent Contract</strong></a>
+                  <span class="status status-ams">Awaiting my Signature</span>
+                </td>
+                <td>Yesterday, 08:45 PM</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td style="width:50px;">
+                  <label class="ui-check m-a-0">
+                    <input type="checkbox"><i></i>
+                  </label>
+                </td>
+                <td>
+                  <a class="table-hyperlink" href="#"><strong>Chris P. Bacon CV 2016</strong></a>
+                  <span class="status status-ams">Awaiting my Signature</span>
+                </td>
+                <td>Jul 12, 2016, 10:55 AM</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td style="width:50px;">
+                  <label class="ui-check m-a-0">
+                    <input type="checkbox"><i></i>
+                  </label>
+                </td>
+                <td>
+                  <a class="table-hyperlink" href="#"><strong>Rent Contract Signing</strong></a>
+                  <span class="status status-returned">Returned</span>
+                </td>
+                <td>Jul 05, 2016, 07:52 PM</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td style="width:50px;">
+                  <label class="ui-check m-a-0">
+                    <input type="checkbox"><i></i>
+                  </label>
+                </td>
+                <td>
+                  <a class="table-hyperlink" href="#"><strong>Sale Contract Signing</strong></a>
+                  <span class="status status-returned">Returned</span>
+                </td>
+                <td>Jun 15, 2016, 04:15 PM</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td style="width:50px;">
+                  <label class="ui-check m-a-0">
+                    <input type="checkbox"><i></i>
+                  </label>
+                </td>
+                <td>
+                  <a class="table-hyperlink" href="#"><strong>Document for signing</strong></a>
+                  <span class="status status-draft">Draft</span>
+                </td>
+                <td>Jul 25, 2016, 09:23 AM</td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+	    </div>
+      <div class="col-sm-12 col-md-4">
+	    	<div class="box">
+				<div class="box-header">
+					<h3>Activity</h3>
+				</div>
+				<div class="box-body">
+				  	<div class="streamline b-l m-b m-l">
+		              <div class="sl-item">
+                    <a herf class="sl-left list-left">
+      		          	<span class="w-40 circle _600 text-white grey-200">
+      		            	LE
+      		            </apan>
+      		          </a>
+		                <div class="sl-content">
+		                  <a href><b>Louis Elliott</b></a><span class="m-l-sm sl-date">5 min ago</span>
+		                  <div>assign you a task <a href class="text-info">Mockup Design</a>.</div>
+		                </div>
+		              </div>
+		              <div class="sl-item">
+		                <div class="sl-left">
+		                  <img src="../assets/images/a5.jpg" class="img-circle">
+		                </div>
+		                <div class="sl-content">
+		                  <a href><b>Terry Moore</b></a><span class="m-l-sm sl-date">10 min ago</span>
+		                  <div>Follow up to close deal</div>
+		                </div>
+		              </div>
+		              <div class="sl-item">
+		                <div class="sl-left">
+		                  <img src="../assets/images/a8.jpg" class="img-circle">
+		                </div>
+		                <div class="sl-content">
+		                  <a href><b>Walter Paler</b></a><span class="m-l-sm sl-date">1 hour ago</span>
+		                  <div>was added to Repo</div>
+		                </div>
+		              </div>
+		            </div>
+		            <a href class="btn btn-sm white text-u-c m-y-xs">Load More</a>
+		  		</div>
+			</div>
+	    </div>
+	</div>
+</div>
+
+<!-- ############ PAGE END-->
+
+    </div><!-- Right panel content -->
+  </div>
+  <!-- / -->
+
+<!-- ############ LAYOUT END-->
+
+  </div>
+<!-- build:js scripts/app.html.js -->
+<!-- jQuery -->
+  <script src="../libs/jquery/jquery/dist/jquery.js"></script>
+<!-- Bootstrap -->
+  <script src="../libs/jquery/tether/dist/js/tether.min.js"></script>
+  <script src="../libs/jquery/bootstrap/dist/js/bootstrap.js"></script>
+<!-- core -->
+  <script src="../libs/jquery/underscore/underscore-min.js"></script>
+  <script src="../libs/jquery/jQuery-Storage-API/jquery.storageapi.min.js"></script>
+  <script src="../libs/jquery/PACE/pace.min.js"></script>
+
+  <script src="scripts/config.lazyload.js"></script>
+
+  <script src="scripts/palette.js"></script>
+  <script src="scripts/ui-load.js"></script>
+  <script src="scripts/ui-jp.js"></script>
+  <script src="scripts/ui-include.js"></script>
+  <script src="scripts/ui-device.js"></script>
+  <script src="scripts/ui-form.js"></script>
+  <script src="scripts/ui-nav.js"></script>
+  <script src="scripts/ui-screenfull.js"></script>
+  <script src="scripts/ui-scroll-to.js"></script>
+  <script src="scripts/ui-toggle-class.js"></script>
+
+  <script src="scripts/app.js"></script>
+
+  <!-- ajax -->
+  <script src="../libs/jquery/jquery-pjax/jquery.pjax.js"></script>
+  <script src="scripts/ajax.js"></script>
+<!-- endbuild -->
+</body>
+</html>

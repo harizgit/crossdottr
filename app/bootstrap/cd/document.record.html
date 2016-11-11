@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Electronic Signatures and Fast, Secure, Legally Binding Online Approvals | CrossDottr</title>
+  <meta name="description" content="Admin, Dashboard, Bootstrap, Bootstrap 4, Angular, AngularJS" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <link rel="icon" href="../assets/images/favicon.ico">
+	<link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="../assets/images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="../assets/images/apple-touch-icon-114x114.png">
+
+  <!-- style -->
+  <link rel="stylesheet" href="../assets/animate.css/animate.min.css" type="text/css" />
+  <link rel="stylesheet" href="../assets/glyphicons/glyphicons.css" type="text/css" />
+  <link rel="stylesheet" href="../assets/font-awesome/css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="../assets/material-design-icons/material-design-icons.css" type="text/css" />
+
+  <link rel="stylesheet" href="../assets/bootstrap/dist/css/bootstrap.min.css" type="text/css" />
+  <!-- build:css ../assets/styles/app.min.css -->
+  <link rel="stylesheet" href="../assets/styles/app.min.css" type="text/css" />
+  <!-- endbuild -->
+  <link rel="stylesheet" href="../assets/styles/font.css" type="text/css" />
+</head>
+<body>
+  <div class="app" id="app">
+
+<!-- ############ LAYOUT START-->
+
+  <!-- aside -->
+  <div id="aside" class="app-aside modal fade nav-dropdown">
+  	<!-- fluid app aside -->
+    <div class="left navside dk" layout="column">
+  	  <div class="navbar cross-nav">
+        <!-- brand -->
+        <a class="navbar-brand">
+        	<img src="../assets/images/logo.png" alt=".">
+        	<span class="hidden-folded inline"><span style="font-weight:500;">Cross</span>Dottr</span>
+        </a>
+        <!-- / brand -->
+      </div>
+      <div flex>
+        <button class="btn navbar-btn primary"><i class="fa fa-file-o" aria-hidden="true"></i> Get Signatures</button>
+          <nav class="scroll nav-light">
+
+              <ul class="nav" ui-nav>
+
+                <li>
+                  <a>
+                    <span class="nav-icon">
+                      <i class="fa fa-folder-o" aria-hidden="true"></i>
+                    </span>
+                    <span class="nav-text">Documents</span>
+                  </a>
+                  <ul>
+                    <li>
+                      <a href="#" >
+                        <span class="nav-text"><i class="status-icon status-ofs"></i>Out for Signing <span class="label danger pull-right">9+</span></span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" >
+                        <span class="nav-text"><i class="status-icon status-ams"></i>Awaiting my Signature</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" >
+                        <span class="nav-text"><i class="status-icon status-returned"></i>Returned</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" >
+                        <span class="nav-text"><i class="status-icon status-draft"></i>Draft</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="dashboard.html" >
+                    <span class="nav-icon">
+                      <i class="fa fa-star-o" aria-hidden="true"></i>
+                    </span>
+                    <span class="nav-text">Templates</span>
+                  </a>
+                </li>
+
+              </ul>
+          </nav>
+      </div>
+      <div flex-no-shrink class="b-t">
+        <div class="nav-fold">
+        	<a href="profile.html">
+        	    <span class="pull-left">
+        	      <img src="../assets/images/a0.jpg" alt="..." class="w-40 img-circle">
+        	    </span>
+        	    <span class="clear hidden-folded p-x">
+        	      <span class="block _500">Jean Reyes</span>
+        	      <small class="block text-muted"><i class="fa fa-circle text-success m-r-sm"></i>online</small>
+        	    </span>
+        	</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- / -->
+
+  <!-- content -->
+  <div id="content" class="app-content box-shadow-z0" role="main">
+    <div class="app-header white">
+        <div class="navbar">
+            <!-- Open side - Naviation on mobile -->
+            <a data-toggle="modal" data-target="#aside" class="navbar-item pull-left hidden-lg-up">
+              <i class="material-icons">&#xe5d2;</i>
+            </a>
+            <!-- / -->
+
+            <!-- Page title - Bind to $state's title -->
+            <div class="navbar-item pull-left h5" ng-bind="$state.current.data.title" id="pageTitle"></div>
+
+            <!-- navbar right -->
+            <ul class="nav navbar-nav pull-right">
+              <li class="nav-item">
+                <a href="#" class="btn btn-sm btn-upgrade">Upgrade</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link clear" href data-toggle="dropdown">
+                  <span class="avatar w-32">
+                    <img src="../assets/images/a0.jpg" alt="...">
+                    <i class="on b-white bottom"></i>
+                  </span>
+                </a>
+                <div ui-include="'../views/blocks/dropdown.user.html'"></div>
+              </li>
+              <li class="nav-item hidden-md-up">
+                <a class="nav-link" data-toggle="collapse" data-target="#collapse">
+                  <i class="material-icons">&#xe5d4;</i>
+                </a>
+              </li>
+            </ul>
+            <!-- / navbar right -->
+
+            <!-- navbar collapse -->
+            <div class="collapse navbar-toggleable-sm" id="collapse">
+              <div ui-include="'../views/blocks/navbar.form.right.html'"></div>
+              <!-- link and dropdown -->
+              <form class="navbar-form form-inline pull-none-sm navbar-item v-m" role="search">
+                <div class="form-group l-h m-a-0">
+                  <div class="input-group top-search">
+                    <span class="input-group-btn">
+                      <button type="submit" class="btn white no-shadow"><i class="fa fa-search"></i></button>
+                    </span>
+                    <input type="text" class="form-control no-shadow" placeholder="Search documents...">
+                  </div>
+                </div>
+              </form>
+            </div>
+            <!-- / navbar collapse -->
+        </div>
+    </div>
+    <div ui-view class="app-body" id="view">
+
+<div class="padding">
+
+	<div class="row">
+	    <div class="col-sm-12 col-md-7">
+        <!-- page bread crumb -->
+        <div class="box">
+          <div class="box-header">
+            <ol class="breadcrumb">
+              <li><a href="#">Documents</a></li>
+              <li class="active">Rent Contract 20th Sep 2016</li>
+            </ol>
+          </div>
+          <div class="document">
+            <div class="document-content">
+              <h4 class="document-title">Rent Agreement</h4>
+              <p>
+                Term of agreement: the term may be fixed or indefinite; if the term is for more than 3 years then it must be registered at the Registrar General’s office together with the Registrar’s prescribed form. If the term is not fixed, legal advice should be obtained as to whether the agreement should be filed with the Registrar General.
+Rental bond: if a bond is being paid, it must not exceed 4 weeks rent (Section 159 of the Act).
+              </p>
+              <p>
+                Urgent repairs: the telephone contact numbers for nominated trades (electrical, plumbing and other) must be provided in the agreement. The landlord agrees to pay the tenant, within 14 days after receiving written notice from the tenant, any reasonable costs (not exceeding $1,000) the tenant has incurred for making urgent repairs so long as certain conditions are complied with. “Urgent repairs” as defined in the Residential Tenancies Act 2010 are set out in the agreement.
+              </p>
+              <p>
+                By-laws: if the agreement relates to residential premises under the Strata Schemes Management Act 1996, the Strata Schemes (Leasehold Development) Act 1986, the Community Land Development Act 1989 or the Community Land Management Act 1989 then the landlord must give a copy of the by-laws to the tenant within 7 days of entering into the agreement.
+              </p>
+            </div>
+          </div>
+        </div><!-- end page bread crumb -->
+
+	    </div>
+      <div class="col-sm-12 col-md-5">
+
+        <!-- nav tabs -->
+        <div class="box">
+            <div class="nav-active-bg">
+              <ul class="nav nav-tabs">
+                <li class="nav-item">
+                  <a class="nav-link active" href="" data-toggle="tab" data-target="#summary" aria-expanded="true">Summary</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="" data-toggle="tab" data-target="#discussion" aria-expanded="false">Discussion</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="" data-toggle="tab" data-target="#versions" aria-expanded="false">Versions</a>
+                </li>
+              </ul>
+            </div>
+          </div><!-- end nav tabs -->
+
+        <!-- Tab panes -->
+        <div class="box tab-content">
+          <div role="tabpanel" class="tab-pane fade in active" id="summary">
+
+            <div class="row">
+              <div class="col-md-12 mb50">
+                <div class="form-group">
+                  <label>Status</label>
+                  <div>
+                    <span class="status status-ofs">Out for Signing</span>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label>ID</label>
+                  <div>0e85fe8919ea6f1c9884f4006b235b7013</div>
+                </div>
+              </div>
+
+
+            <!-- Audit Trail -->
+            <div class="col-md-12">
+                <h6 class="mb30">Audit Trail</h6>
+                <div class="streamline b-l m-l">
+                    <div class="sl-item">
+                      <div class="sl-content">
+                        <div class="sl-date text-muted">Today, 05:23 PM</div>
+                        <div><a href><b>Tom Lee</b></a> signed this document</div>
+                      </div>
+                    </div>
+                    <div class="sl-item">
+                      <div class="sl-content">
+                        <div class="sl-date text-muted">Yesterday, 08:45 PM</div>
+                        <div><a href><b>Tom Lee</b></a> opened this document from the email</div>
+                      </div>
+                    </div>
+                    <div class="sl-item">
+                      <div class="sl-content">
+                        <div class="sl-date text-muted">Jul 05, 2016, 07:52 PM</div>
+                        <div><a href><b>John Florence</b></a> edited this document</div>
+                      </div>
+                    </div>
+                    <div class="sl-item">
+                      <div class="sl-content">
+                        <div class="sl-date text-muted">Jul 06, 2016, 09:15 AM</div>
+                        <div><a href><b>Daniel Richardson</b></a> created this document</div>
+                      </div>
+                    </div>
+                </div>
+              </div><!-- End Audit Trail -->
+            </div>
+
+          </div>
+
+          <div role="tabpanel" class="tab-pane fade" id="discussion">...</div>
+          <div role="tabpanel" class="tab-pane fade" id="versions">...</div>
+        </div><!-- End Tab panes -->
+
+
+			</div>
+	  </div>
+	</div>
+</div>
+
+<!-- ############ PAGE END-->
+
+    </div>
+  </div>
+  <!-- / -->
+
+<!-- ############ LAYOUT END-->
+
+  </div>
+<!-- build:js scripts/app.html.js -->
+<!-- jQuery -->
+  <script src="../libs/jquery/jquery/dist/jquery.js"></script>
+<!-- Bootstrap -->
+  <script src="../libs/jquery/tether/dist/js/tether.min.js"></script>
+  <script src="../libs/jquery/bootstrap/dist/js/bootstrap.js"></script>
+<!-- core -->
+  <script src="../libs/jquery/underscore/underscore-min.js"></script>
+  <script src="../libs/jquery/jQuery-Storage-API/jquery.storageapi.min.js"></script>
+  <script src="../libs/jquery/PACE/pace.min.js"></script>
+
+  <script src="scripts/config.lazyload.js"></script>
+
+  <script src="scripts/palette.js"></script>
+  <script src="scripts/ui-load.js"></script>
+  <script src="scripts/ui-jp.js"></script>
+  <script src="scripts/ui-include.js"></script>
+  <script src="scripts/ui-device.js"></script>
+  <script src="scripts/ui-form.js"></script>
+  <script src="scripts/ui-nav.js"></script>
+  <script src="scripts/ui-screenfull.js"></script>
+  <script src="scripts/ui-scroll-to.js"></script>
+  <script src="scripts/ui-toggle-class.js"></script>
+
+  <script src="scripts/app.js"></script>
+
+  <!-- ajax -->
+  <script src="../libs/jquery/jquery-pjax/jquery.pjax.js"></script>
+  <script src="scripts/ajax.js"></script>
+<!-- endbuild -->
+</body>
+</html>
