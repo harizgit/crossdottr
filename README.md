@@ -27,7 +27,8 @@ its package manager (npm) installed.  You can get them from [http://nodejs.org/]
 Clone the angular-seed repository using [git][git]:
 
 ```
-https://github.com/harizgit/crossdottr.git
+git clone https://github.com/harizgit/crossdottr.git
+cd crossdottr
 cd angular-seed
 ```
 
