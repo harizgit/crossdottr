@@ -2,17 +2,19 @@
 
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
-  'ngRoute',
-  'myApp.home',
-  'myApp.contract_list',
-  'myApp.create_contract',
-  'myApp.smart-fields',
-  'myApp.review',
-  'myApp.view2',
-  'myApp.version'
+    'ngRoute',
+    'ngFileUpload',
+    'myApp.user',
+    'myApp.contractListing',
+    'myApp.contractDetails',
+    'myApp.createContract',
+    'myApp.signContract',
+    'myApp.activity',
+    'myApp.version',
+    'myApp.commonComponent'
 ]).
-config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-  $locationProvider.hashPrefix('!');
+config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider, $rootScope) {
+   $locationProvider.hashPrefix('!');
 
-  $routeProvider.otherwise({redirectTo: '/'});
+    $routeProvider.otherwise({ redirectTo: '/login' });
 }]);
